@@ -39,7 +39,7 @@ def main():
     jumpTable['12'] = stub                # Subba - call to function goes here
     jumpTable['13'] = stub                # Thorne - call to function goes here
     jumpTable['14'] = stub                # Thurman - call to function goes here
-    jumpTable['15'] = stub                # Valdez - call to function goes here
+    jumpTable['15'] = valdezFunction      # Valdez - call to function goes here
 
     chrChoice = ""      # To hold a menu choice
 
@@ -101,8 +101,37 @@ def showMenu():
 # *****************************************************************************************
 # Add your function below.  
 #  
-# FunctionName:  lastnameFunction(your parameters)
+# FUNCTION:        valdezFunction()
+# DESCRIPTION:     Program takes in one, long word from the user and outputs 
+#                  two new words in all uppercase to the user. One word created from the even
+#                  letters of the word inputted. The other word combines the last 4 character
+#                  of the input & second through fifth characters into a single word.   
+# OUTPUT EXAMPLE:  User enters OrlandoValdez
+#                  Programs Outputs
+#                  Word 1: OLNOADZ
+#                  Word 2: LDEZRLA  
 # *****************************************************************************************
+
+def valdezFunction():
+    print("Well, Hello there...\n")
+    
+    print("*" * 25)
+    print("Two For One Program")
+    print("*" * 25)
+    
+    wordCount = 0
+    while wordCount < 10:
+        word = input("Enter a word containing at least 10 characters: ")
+        if len(word) < 10:
+            print("The word you enter MUST contain at least 10 characters.\n")
+        else:
+            word_1 = word[0::2]
+            word_2 = (word[-4 :] + word[1:4])
+            print("Word 1:",word_1.upper())
+            print("Word 2:",word_2.upper())
+            break 
+    print("\nThanks for using! Till Next Time!")
+    input("Print Enter to Continue...")    
 
 # *****************************************************************************************
 # FUNCTION:         stub (default for menu)
